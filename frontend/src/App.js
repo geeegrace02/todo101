@@ -8,7 +8,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
 
-  // Load all tasks
   const loadTasks = async () => {
     try {
       setErr("");
@@ -26,7 +25,6 @@ function App() {
 
   useEffect(() => {
     loadTasks();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Create a task
