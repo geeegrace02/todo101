@@ -1,0 +1,28 @@
+version: "1.0"
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - /Users/geeegrace/Documents/y5sem1/ISP/todo101:/data/db
+
+  todo-backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "15000:15000"
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/todos
+    depends_on:
+      - mongo
+
+  todo-frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - todo-backend
