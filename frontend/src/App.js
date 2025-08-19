@@ -73,8 +73,7 @@ function App() {
 
   return (
     <div style={{ padding: 20, maxWidth: 520 }}>
-      <h1>To-Do App</h1>
-
+      <h1>To-Do App Version 1.0</h1>
       <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
         <input
           value={text}
